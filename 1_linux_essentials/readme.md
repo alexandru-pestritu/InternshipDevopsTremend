@@ -64,3 +64,13 @@ We open the configuration file using `nano` and we edit the listening port from 
 After that we restart the nginx service using `service nginx reload` and we check the listening port to see if changes took effect. 
 
 <img width="768" alt="Screenshot 2025-03-24 at 13 09 31" src="https://github.com/user-attachments/assets/f90f40ad-dd3e-4802-b4a7-0f3bf9dded15" />
+
+
+## Bonus task 2: Modify the default HTML page title
+The default html page for Nginx is located at `/var/www/html/index.html`. We use `nano` to edit the content between the `<title>` HTML tags.
+
+<img width="591" alt="Screenshot 2025-03-24 at 13 26 58" src="https://github.com/user-attachments/assets/051a70a9-f271-4965-a9b4-22d029eb12d5" />
+
+The changes should reflect immediately, and no restart is needed for the Nginx server. To check we run `curl http://localhost:8080` that will return the content from `index.html` file.
+
+<img width="575" alt="Screenshot 2025-03-24 at 13 27 39" src="https://github.com/user-attachments/assets/c441bf20-1f96-46d2-8696-f4f9de87611a" />
