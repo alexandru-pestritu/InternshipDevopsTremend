@@ -24,3 +24,14 @@ In Python, we add the following piece of code that will catch the SIGTERM stop s
 Now if we stop the container, we can see the `Received SIGTERM. Shutting down gracefully...` message printed in the console.
 
 <img width="809" alt="Screenshot 2025-03-24 at 19 56 49" src="https://github.com/user-attachments/assets/8bbb2c47-2c91-4add-b066-293982906e5e" />
+
+## Bonus Task 2: Configure environment variables for sensitive information
+We add the following piece of code in Python that will get `TEST_ENV_VAR` from the environment and store it in `test_env_var` variable that can be used later in the code. 
+
+<img width="437" alt="Screenshot 2025-03-24 at 20 50 05" src="https://github.com/user-attachments/assets/0b557808-45fd-42af-957e-8109cd1c5935" />
+
+To pass the environment variables we can use a `.env` file and pass it via `--env-file` argument to the `docker run` command, or we can pass them individually using `-e` argument.
+
+<img width="1161" alt="Screenshot 2025-03-24 at 20 06 53" src="https://github.com/user-attachments/assets/50808935-078f-43e7-b55d-edab706b5a0b" />
+
+
