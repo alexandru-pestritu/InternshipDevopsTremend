@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY calculator.py /app/
 
 # For setting environment variables, we can use the ENV instruction and we pass them later with -e or --env when running the container
-# ENV TEST_ENV_VAR=Test
+ENV TEST_ENV_VAR=test-env-var-from-dockerfile
 
 # We expose port 8080 outside of the container
 EXPOSE 8080

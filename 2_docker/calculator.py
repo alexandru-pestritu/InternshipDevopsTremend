@@ -1,6 +1,9 @@
 from flask import Flask, request, jsonify, render_template_string
 import signal
 import sys
+import os
+
+test_env_var = os.environ.get('TEST_ENV_VAR', 'fallback')
 
 app = Flask(__name__)
 
