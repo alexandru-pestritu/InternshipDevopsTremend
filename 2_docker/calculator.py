@@ -1,4 +1,6 @@
 from flask import Flask, request, jsonify, render_template_string
+import signal
+import sys
 
 app = Flask(__name__)
 
@@ -73,3 +75,9 @@ def calculate():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
+
+def handle_sigterm(*args):
+    print("Received SIGTERM. Shutting down gracefully...")
+    sys.exit(0)
+
+signal.signal(signal.SIGTERM, handle_sigterm)
