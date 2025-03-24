@@ -27,3 +27,25 @@ We install the `netcat-openbsd` package by running `apt-get install -y netcat-op
 For checking if the DNS port is open, we run `nc -vz google-dns 53`. `-v` option enables verbose mode to give detailed information about the connection attempt. `-z` option checks only if the port is open and no data is sent. `53` is the common port used for the DNS services.
 
 <img width="469" alt="Screenshot 2025-03-24 at 12 11 32" src="https://github.com/user-attachments/assets/31e75ddd-5b27-4578-9b28-071815563410" />
+
+
+## Task 4: Modify the System to Use Google’s Public DNS
+To change the nameserver to `8.8.8.8` instead of the default local configuration we need to add the `nameserver 8.8.8.8` line in the `/etc/resolv.conf` file. We frist do a backup of the file running `cp /etc/resolv.conf /etc/resolv.conf.bak`. Then we run `echo "nameserver 8.8.8.8" > /etc/resolv.conf` to change the nameserver. After looking up the `cloudflare.com` public IP we get the same result as before.
+
+<img width="513" alt="Screenshot 2025-03-24 at 12 13 40" src="https://github.com/user-attachments/assets/91968d5c-1ce0-4d9a-b585-40e423fbfc3b" />
+
+
+## Task 5: Install and verify that Nginx service is running
+We install the Nginx package using `apt-get update && apt-get install -y nginx`. 
+
+<img width="527" alt="Screenshot 2025-03-24 at 12 14 03" src="https://github.com/user-attachments/assets/9b243425-b6d0-4a48-bfcc-40bdf179a55c" />
+
+Then we start the service using `service nginx start` and check if Nginx is running using `service nginx status` command.
+
+<img width="772" alt="Screenshot 2025-03-24 at 12 14 37" src="https://github.com/user-attachments/assets/41d000fb-3990-4be4-855a-fbf81e537945" />
+
+
+## Task 6: Find the Listening Port for Nginx
+To find the listening port for the Nginx service we use the Socket Statistics command-line utility with the following command: `ss -tulpn | grep nginx`. `-t` option shows the TCP connections, `-u` option shows the UDP connections, `-l` shows the listening sockets, `-p` shows the process using the socket and `-n` displays numeric addresses. We then use a pipe that sends the output of `ss` to `grep` and filters the results to only show lines containing the `nginx` word. By running the command we find that Nginx is listening on port `80`.
+
+<img width="718" alt="Screenshot 2025-03-24 at 12 15 57" src="https://github.com/user-attachments/assets/0a0f5d2d-0fac-43ad-af88-a0c60b07ad1a" />
