@@ -49,3 +49,18 @@ Then we start the service using `service nginx start` and check if Nginx is runn
 To find the listening port for the Nginx service we use the Socket Statistics command-line utility with the following command: `ss -tulpn | grep nginx`. `-t` option shows the TCP connections, `-u` option shows the UDP connections, `-l` shows the listening sockets, `-p` shows the process using the socket and `-n` displays numeric addresses. We then use a pipe that sends the output of `ss` to `grep` and filters the results to only show lines containing the `nginx` word. By running the command we find that Nginx is listening on port `80`.
 
 <img width="718" alt="Screenshot 2025-03-24 at 12 15 57" src="https://github.com/user-attachments/assets/0a0f5d2d-0fac-43ad-af88-a0c60b07ad1a" />
+
+
+## Bonus Task 1: Change the Nginx Listening port to 8080
+To change the server configuration for Nginx we need to edit the `/etc/nginx/sites-available/default` file. First we install the `nano` utility.
+
+<img width="571" alt="Screenshot 2025-03-24 at 13 08 43" src="https://github.com/user-attachments/assets/fabaf998-a0ea-4265-94f4-507f0772b7da" />
+
+We open the configuration file using `nano` and we edit the listening port from `80` to `8080` under the default server configuration.
+
+<img width="461" alt="Screenshot 2025-03-24 at 13 08 53" src="https://github.com/user-attachments/assets/b5e94da9-a176-4e41-bb87-225541462e20" />
+<img width="575" alt="Screenshot 2025-03-24 at 13 08 11" src="https://github.com/user-attachments/assets/c5708118-b871-449b-a9e7-98c6b3648c59" />
+
+After that we restart the nginx service using `service nginx reload` and we check the listening port to see if changes took effect. 
+
+<img width="768" alt="Screenshot 2025-03-24 at 13 09 31" src="https://github.com/user-attachments/assets/f90f40ad-dd3e-4802-b4a7-0f3bf9dded15" />
