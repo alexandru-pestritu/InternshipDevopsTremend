@@ -16,3 +16,11 @@ If we check the container's console we can see that the app started successfully
 Now we can visit `http://localhost:8080` on the host machine to view and test the website.
 
 <img width="1447" alt="Screenshot 2025-03-24 at 19 51 00" src="https://github.com/user-attachments/assets/ae43892c-8376-4f7c-9206-36e18fe193ad" />
+
+## Bonus Task 1: Ensure the application catches the Docker container's stop signal and performs a clean shutdown
+In Python, we add the following piece of code that will catch the SIGTERM stop signal and will execute handle_sigterm method.
+<img width="461" alt="Screenshot 2025-03-24 at 20 46 34" src="https://github.com/user-attachments/assets/7a372ea4-6730-420e-a53f-6843cfa33b17" />
+
+Now if we stop the container, we can see the `Received SIGTERM. Shutting down gracefully...` message printed in the console.
+
+<img width="809" alt="Screenshot 2025-03-24 at 19 56 49" src="https://github.com/user-attachments/assets/8bbb2c47-2c91-4add-b066-293982906e5e" />
