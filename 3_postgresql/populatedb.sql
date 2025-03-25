@@ -1,5 +1,5 @@
 -- Use the existing database
-USE company_db;
+--USE company_db;
 
 -- Departments table
 CREATE TABLE departments (
@@ -159,8 +159,9 @@ INSERT INTO salaries (employee_id, salary) VALUES
 (50, 137000),
 (51, 139000),
 (52, 141000),
-(53, 143000),
-(54, 145000),
+(53, 143000);
+-- Comment the rest of the salaries because we only have 53 employees
+/* (54, 145000),
 (55, 147000),
 (56, 149000),
 (57, 151000),
@@ -182,6 +183,6 @@ INSERT INTO salaries (employee_id, salary) VALUES
 (73, 183000),
 (74, 185000),
 (75, 187000),
-(76, 189000);
+(76, 189000); */
 
 
