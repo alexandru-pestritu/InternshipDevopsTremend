@@ -1,5 +1,8 @@
 # Docker Containerization
 
+## Docker Hub Repository 
+The docker image built using the Github Actions workflow can be found at this URL: https://hub.docker.com/r/alehh69/my-calculator
+
 ## Local testing
 To build the Docker image locally we need to navigate to the directory where the `Dockerfile` is located and run the following command: `docker build -t calculator .`. `-t` tag is used to assign a name to the Docker image.
 
